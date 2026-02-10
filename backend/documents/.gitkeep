@@ -1,0 +1,9 @@
+# Place Qatar 2030 Vision PDF documents here:
+#
+# Required documents for full RAG:
+# - QNV2030_English_v2.pdf  (QNV 2030 - The Vision)
+# - NDS_EN_0.pdf            (NDS-1, 2011-2016)
+# - NDS2Final.pdf           (NDS-2, 2018-2022)
+# - QNDS3_EN.pdf            (NDS-3, 2024-2030)
+#
+# After adding/updating PDFs: POST /api/rebuild-index

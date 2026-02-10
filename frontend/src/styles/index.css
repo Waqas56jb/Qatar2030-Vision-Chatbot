@@ -62,4 +62,15 @@
   .animate-slideUp {
     animation: slideUp 0.3s ease-out;
   }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(252, 222, 144, 0.3);
+    border-radius: 3px;
+  }
 }

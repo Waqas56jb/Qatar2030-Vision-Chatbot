@@ -18,8 +18,8 @@ export const useChat = () => {
     setError(null)
 
     try {
-      // Prepare conversation history for OpenAI (last 10 messages)
-      const recentMessages = messages.slice(-10).map(msg => ({
+      // Keep history shorter for speed (lower token load)
+      const recentMessages = messages.slice(-6).map(msg => ({
         role: msg.role,
         content: msg.content
       }))
@@ -28,6 +28,7 @@ export const useChat = () => {
       const assistantMessage = {
         role: 'assistant',
         content: response.message || response.content || 'I received your message.',
+        sources: response.sources,
         timestamp: new Date().toISOString(),
       }
       setMessages((prev) => [...prev, assistantMessage])
@@ -35,7 +36,7 @@ export const useChat = () => {
       setError(err.message || 'Failed to send message')
       const errorMessage = {
         role: 'assistant',
-        content: `Sorry, I encountered an error: ${err.message}. Please check your OpenAI API key configuration or try again.`,
+        content: `Sorry, I encountered an error: ${err.message}. Ensure the backend is running from the backend folder (python run.py) and Ollama has the chat model (e.g. llama3.2:3b) and nomic-embed-text.`,
         timestamp: new Date().toISOString(),
       }
       setMessages((prev) => [...prev, errorMessage])
