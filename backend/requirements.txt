@@ -1,16 +1,12 @@
 # FastAPI & Server
 fastapi
 uvicorn[standard]
-
 # Ollama - Local LLM
 ollama
-
 # RAG & Embeddings
 faiss-cpu
 numpy
-
 # PDF Processing
 pypdf
-
 # Utilities
 python-multipart
